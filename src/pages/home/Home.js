@@ -70,6 +70,7 @@ class HomeScreen extends Component {
             </TouchableOpacity>
           )}
         />
+        <Text>V4</Text>
         <Button title="检查更新" onPress={() => this.update()} />
       </View>
     );
@@ -96,9 +97,12 @@ class HomeScreen extends Component {
               optionalIgnoreButtonLabel: "稍后",
               optionalInstallButtonLabel: "立即更新",
               optionalUpdateMessage: "有新版本了，是否更新？",
-              title: "更新提示"
+              mandatoryUpdateMessage: "强制更新",
+              title: "更新提示",
+              mandatoryContinueButtonLabel: "立即更新"
             },
-            installMode: CodePush.InstallMode.IMMEDIATE
+            installMode: CodePush.InstallMode.IMMEDIATE,
+            mandatoryInstallMode: CodePush.InstallMode.IMMEDIATE
           },
           status => {
             switch (status) {
