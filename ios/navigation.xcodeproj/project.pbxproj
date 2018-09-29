@@ -13,6 +13,9 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* navigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* navigationTests.m */; };
+		09554C3D215F1E0D00C75A50 /* ReactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09554C3C215F1E0D00C75A50 /* ReactViewController.m */; };
+		09554C70215F1E2900C75A50 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09554C6F215F1E2900C75A50 /* NativeViewController.m */; };
+		09554C84215F246600C75A50 /* NativeToReactModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 09554C83215F246600C75A50 /* NativeToReactModule.m */; };
 		09AAC2A8214A607B008442AB /* RSKImageCropper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AAC2A7214A607B008442AB /* RSKImageCropper.framework */; };
 		09AAC2A9214A607B008442AB /* RSKImageCropper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09AAC2A7214A607B008442AB /* RSKImageCropper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09AAC2AC214A6087008442AB /* QBImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AAC2AB214A6087008442AB /* QBImagePicker.framework */; };
@@ -431,6 +434,12 @@
 		00E356EE1AD99517003FC87E /* navigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = navigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* navigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationTests.m; sourceTree = "<group>"; };
+		09554C3B215F1E0D00C75A50 /* ReactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactViewController.h; sourceTree = "<group>"; };
+		09554C3C215F1E0D00C75A50 /* ReactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactViewController.m; sourceTree = "<group>"; };
+		09554C6E215F1E2900C75A50 /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		09554C6F215F1E2900C75A50 /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		09554C82215F246600C75A50 /* NativeToReactModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeToReactModule.h; sourceTree = "<group>"; };
+		09554C83215F246600C75A50 /* NativeToReactModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeToReactModule.m; sourceTree = "<group>"; };
 		09AAC2A7214A607B008442AB /* RSKImageCropper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSKImageCropper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AAC2AB214A6087008442AB /* QBImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -704,6 +713,12 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				09554C3B215F1E0D00C75A50 /* ReactViewController.h */,
+				09554C3C215F1E0D00C75A50 /* ReactViewController.m */,
+				09554C6E215F1E2900C75A50 /* NativeViewController.h */,
+				09554C6F215F1E2900C75A50 /* NativeViewController.m */,
+				09554C82215F246600C75A50 /* NativeToReactModule.h */,
+				09554C83215F246600C75A50 /* NativeToReactModule.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -1458,8 +1473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09554C84215F246600C75A50 /* NativeToReactModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				09554C3D215F1E0D00C75A50 /* ReactViewController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				09554C70215F1E2900C75A50 /* NativeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
