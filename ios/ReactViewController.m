@@ -27,11 +27,11 @@
   
   
   //    #ifdef DEBUG
-    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   //    #else
   //        jsCodeLocation = [CodePush bundleURL];
   //    #endif
-  //  jsCodeLocation = [CodePush bundleURL];
+    jsCodeLocation = [CodePush bundleURL];
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"navigation"

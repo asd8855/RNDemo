@@ -70,7 +70,7 @@ class HomeScreen extends Component {
             </TouchableOpacity>
           )}
         />
-        <Text>V4</Text>
+        <Text>V1</Text>
         <Button title="检查更新" onPress={() => this.update()} />
       </View>
     );
