@@ -7,7 +7,6 @@
 //
 
 #import "NativeViewController.h"
-
 @interface NativeViewController ()
 
 @end
