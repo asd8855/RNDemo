@@ -3,6 +3,8 @@ package com.navigation;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.yamill.orientation.OrientationPackage;
+import com.brentvatne.react.ReactVideoPackage;
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 import com.microsoft.codepush.react.CodePush;
 import org.reactnative.camera.RNCameraPackage;
@@ -36,6 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new OrientationPackage(),
+            new ReactVideoPackage(),
             new RNViewShotPackage(),
             new CodePush(null, getApplicationContext(), BuildConfig.DEBUG),
             new RNCameraPackage(),

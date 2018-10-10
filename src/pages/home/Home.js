@@ -38,7 +38,9 @@ class HomeScreen extends Component {
         "DeviceInfo",
         "ImagePicker",
         "ImagePicker2",
-        "QRScanner"
+        "QRScanner",
+        "Video",
+        "FullScreenVideo"
       ]
     };
   }

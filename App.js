@@ -22,7 +22,8 @@ import DeviceInfoScreen from "./src/pages/detail/DeviceInfo";
 import ImagePicker from "./src/pages/detail/ImagePicker";
 import ImagePicker2 from "./src/pages/detail/ImagePicker2";
 import QRScanner from "./src/pages/detail/QRScanner";
-
+import Video from "./src/pages/detail/Video";
+import FullScreenVideo from "./src/pages/detail/FullScreenVideo";
 const Router = {
   Home: HomeScreen,
   Work: WorkScreen,
@@ -33,7 +34,9 @@ const Router = {
   DeviceInfo: DeviceInfoScreen,
   ImagePicker: ImagePicker,
   ImagePicker2: ImagePicker2,
-  QRScanner: QRScanner
+  QRScanner: QRScanner,
+  Video: Video,
+  FullScreenVideo: FullScreenVideo
 };
 
 const HomeStack = createStackNavigator(Router, {
@@ -85,7 +88,6 @@ const RootStack = createBottomTabNavigator(TabRouterConfig, {
 });
 
 export default class App extends React.Component {
-
   render() {
     return <RootStack />;
   }

@@ -42,7 +42,6 @@
   self.view = rootView;
   
   self.title = @"React";
-  [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
