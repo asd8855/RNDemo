@@ -16,7 +16,7 @@ let codePushOptions = {
   //ON_APP_RESUME APP恢复到前台的时候
   //ON_APP_START APP开启的时候
   //MANUAL 手动检查
-  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME
+  checkFrequency: CodePush.CheckFrequency.MANUAL
 };
 
 class HomeScreen extends Component {
@@ -79,54 +79,57 @@ class HomeScreen extends Component {
   }
 
   update() {
-    let deploymentKey =
-      "gznakSDQMAWZMGj2Cdv875OuRQp-16019a3c-6414-4755-9fda-175132ca846e";
-    CodePush.checkForUpdate(deploymentKey).then(update => {
-      if (!update) {
-        Alert.alert("提示", "已是最新版本--", [
-          {
-            text: "Ok",
-            onPress: () => {
-              console.log("点了OK");
+
+    CodePush.checkForUpdate()
+      .then(update => {
+        debugger;
+        if (!update) {
+          Alert.alert("提示", "已是最新版本--", [
+            {
+              text: "Ok",
+              onPress: () => {
+                console.log("点了OK");
+              }
             }
-          }
-        ]);
-      } else {
-        CodePush.sync(
-          {
-            deploymentKey: deploymentKey,
-            updateDialog: {
-              optionalIgnoreButtonLabel: "稍后",
-              optionalInstallButtonLabel: "立即更新",
-              optionalUpdateMessage: "有新版本了，是否更新？",
-              mandatoryUpdateMessage: "强制更新",
-              title: "更新提示",
-              mandatoryContinueButtonLabel: "立即更新"
+          ]);
+        } else {
+          CodePush.sync(
+            {
+              updateDialog: {
+                optionalIgnoreButtonLabel: "稍后",
+                optionalInstallButtonLabel: "立即更新",
+                optionalUpdateMessage: "有新版本了，是否更新？",
+                mandatoryUpdateMessage: "强制更新",
+                title: "更新提示",
+                mandatoryContinueButtonLabel: "立即更新"
+              },
+              installMode: CodePush.InstallMode.IMMEDIATE,
+              mandatoryInstallMode: CodePush.InstallMode.IMMEDIATE
             },
-            installMode: CodePush.InstallMode.IMMEDIATE,
-            mandatoryInstallMode: CodePush.InstallMode.IMMEDIATE
-          },
-          status => {
-            switch (status) {
-              case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
-                console.log("DOWNLOADING_PACKAGE");
-                break;
-              case CodePush.SyncStatus.INSTALLING_UPDATE:
-                console.log(" INSTALLING_UPDATE");
-                break;
+            status => {
+              switch (status) {
+                case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
+                  console.log("DOWNLOADING_PACKAGE");
+                  break;
+                case CodePush.SyncStatus.INSTALLING_UPDATE:
+                  console.log(" INSTALLING_UPDATE");
+                  break;
+              }
+            },
+            progress => {
+              console.log(
+                progress.receivedBytes +
+                  " of " +
+                  progress.totalBytes +
+                  " received."
+              );
             }
-          },
-          progress => {
-            console.log(
-              progress.receivedBytes +
-                " of " +
-                progress.totalBytes +
-                " received."
-            );
-          }
-        );
-      }
-    });
+          );
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }
 

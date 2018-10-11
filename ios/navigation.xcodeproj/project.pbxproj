@@ -474,6 +474,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* navigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationTests.m; sourceTree = "<group>"; };
 		0119AFFD324344F28C41B3AE /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOrientation.xcodeproj; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; };
+		093DC325216DF8810056CB84 /* navigation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = navigation.entitlements; path = navigation/navigation.entitlements; sourceTree = "<group>"; };
 		0940B864216C95B40029C8A3 /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
 		09554C3B215F1E0D00C75A50 /* ReactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactViewController.h; sourceTree = "<group>"; };
 		09554C3C215F1E0D00C75A50 /* ReactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactViewController.m; sourceTree = "<group>"; };
@@ -797,6 +798,7 @@
 		13B07FAE1A68108700A75B9A /* navigation */ = {
 			isa = PBXGroup;
 			children = (
+				093DC325216DF8810056CB84 /* navigation.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				09554C3B215F1E0D00C75A50 /* ReactViewController.h */,
@@ -1031,6 +1033,14 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = AXEVUJ95ZY;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1806,6 +1816,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODEPUSH_KEY = "gznakSDQMAWZMGj2Cdv875OuRQp-16019a3c-6414-4755-9fda-175132ca846e";
+				CODE_SIGN_ENTITLEMENTS = navigation/navigation.entitlements;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXEVUJ95ZY;
 				HEADER_SEARCH_PATHS = (
@@ -1846,6 +1858,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2008,6 +2021,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODEPUSH_KEY = "";
+				CODE_SIGN_ENTITLEMENTS = navigation/navigation.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = AXEVUJ95ZY;
@@ -2050,6 +2064,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODEPUSH_KEY = "i381Hn9vHEf2JMUXb4fWyNpHFhHG16019a3c-6414-4755-9fda-175132ca846e";
+				CODE_SIGN_ENTITLEMENTS = navigation/navigation.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXEVUJ95ZY;
 				HEADER_SEARCH_PATHS = (
