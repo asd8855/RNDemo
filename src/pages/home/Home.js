@@ -10,6 +10,8 @@ import {
 } from "react-native";
 
 import CodePush from "react-native-code-push";
+import RenderCallbackCpm from "../detail/RenderCallBackCmp";
+import SlotCmp from "../detail/SlotCmp";
 
 let codePushOptions = {
   //设置检查更新的频率
@@ -40,7 +42,8 @@ class HomeScreen extends Component {
         "ImagePicker2",
         "QRScanner",
         "Video",
-        "FullScreenVideo"
+        "FullScreenVideo",
+        "LoadMore"
       ]
     };
   }
@@ -72,6 +75,16 @@ class HomeScreen extends Component {
             </TouchableOpacity>
           )}
         />
+
+        <SlotCmp>
+          <Text>
+            该组件适应于一个组件大部分是一样的，极个别UI子组件需要自定义，可通过该方法进行自定义。
+            父组件修改子组件
+          </Text>
+        </SlotCmp>
+
+        <RenderCallbackCpm>{msg => <Text>{msg}</Text>}</RenderCallbackCpm>
+
         <Text>V1</Text>
         <Button title="检查更新" onPress={() => this.update()} />
       </View>
@@ -79,7 +92,6 @@ class HomeScreen extends Component {
   }
 
   update() {
-
     CodePush.checkForUpdate()
       .then(update => {
         debugger;

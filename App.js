@@ -24,6 +24,8 @@ import ImagePicker2 from "./src/pages/detail/ImagePicker2";
 import QRScanner from "./src/pages/detail/QRScanner";
 import Video from "./src/pages/detail/Video";
 import FullScreenVideo from "./src/pages/detail/FullScreenVideo";
+import LoadMore from './src/pages/detail/LoadMore'
+
 const Router = {
   Home: HomeScreen,
   Work: WorkScreen,
@@ -36,7 +38,8 @@ const Router = {
   ImagePicker2: ImagePicker2,
   QRScanner: QRScanner,
   Video: Video,
-  FullScreenVideo: FullScreenVideo
+  FullScreenVideo: FullScreenVideo,
+  LoadMore: LoadMore
 };
 
 const HomeStack = createStackNavigator(Router, {
@@ -55,7 +58,7 @@ const TabRouterConfig = {
   HomeTab: {
     screen: HomeStack,
     navigationOptions: ({ navigation }) => ({
-      //非主页面不显示 tabbar
+      //非主页面不显示tabbar
       tabBarVisible: navigation.state.index === 0,
       title: "首页"
     })
